@@ -1,0 +1,54 @@
+{% extends 'personal_website/base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+<!-- About Me Section-->
+<body>
+  {% block content %}
+  <div class="about-me-container">
+    <h2>About Me</h2>
+    <p>Hello! My name is Trevor Seestedt and welcome to my website! 
+      I am currently a Senior at the University of South Carolina pursuing a Bachelor of Science in Computer Science, 
+      with an expected graduation date of May 2025. </p>
+    <p>I have an ever-growing passion in the field of software engineering and am always eager to learning and utilizing new technologies to improve my skills.
+      Throughout my time as a student, I have had the opportunity to work on a variety of side projects which have enhanced my problem solving abilities and 
+      have taught me the fundamentals of software development.
+    </p>
+    <p>Outside of coding, I enjoy reading books and watching movies as well as staying active by playing basketball and tennis, all of which have helped me stay balanced. 
+      This website will serve as a display for all of the personal projects that I have been and will be working on in my free time.</p>
+    <p>Feel free to navigate to my **Projects** page to take a look at what I have been working on! If there is any reason you would like to reach out, 
+      please scroll down to the **Contact** section and use any of the provided methods.</p>
+  </div>
+
+  <!-- Resume Section -->
+  <div class="resume-container">
+    <h2>Resume</h2>
+    <p>Below is a copy of my resume.</p>
+    <a class = "btn" href="{% static 'personal_website/images/TrevorSeestedt_Resume.pdf' %}" target="_blank" rel="noopener noreferrer">Click to Open Resume</a>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <h2>Contact</h2>
+    <p>For any inquiries or questions, please feel free to reach out!</p>
+    <p>Email: <a href="mailto:seestedttrevor@gmail.com">seestedttrevor@gmail.com</a></p>
+    <p>Phone: <a href="tel:610-322-6475">610-322-6475</a></p>
+    <div class="social-icons">
+      <div class="github-icon">
+        <img src="{% static 'personal_website/images/GitHub_Icon.png' %}">
+      </div>
+      <div class="linkedin-icon">
+        <img src="{% static 'personal_website/images/LinkedIn_Icon.png' %}">
+      </div>
+    </div>
+    <!-- Github -->
+    <!-- Linkedin-->
+  </div>
+  {% endblock content %}
+
+  <script src="{% static 'personal_website/js/typing.js' %}"></script>
+</body>

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- If the user had dark mode before, it is set immediately on DOMContentLoaded -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const isDark = (savedTheme === 'dark');
+
+      // Body set to dark mode
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+
+      // Syncing bulb so it's fileld if in dark mode
+      const bulb = document.getElementById('light-bulb').querySelector('svg');
+      if(isDark) {
+        bulb.classList.remove('bulb-off');
+        bulb.classList.add('bulb-on');
+      } else { 
+        bulb.classList.remove('bulb-on');
+        bulb.classList.add('bulb-off');
+      }
+    });
+  </script>
+
+  <title>{% block title %}My Website{% endblock title %}</title>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Link to main CSS file -->
+  <link rel="stylesheet" href="{% static 'personal_website/css/styles.css' %}">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="site-title" id="site-title-typer"></div>
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'projects' %}">Projects</a></li>
+      </ul>
+      <!-- Light & dark mode toggle -->
+      <div id="light-bulb" class="light-bulb" onclick="toggleDarkMode()">
+        <!-- Light bulb icon -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bulb-off">
+          <path d="M9 18h6M10 22h4M12 2C8.13 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 
+          2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.13-7-7-7z"></path>
+        </svg>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    {% block content %}{% endblock content %}
+  </div>
+
+  {% block footer %}
+  <footer>
+    <p>&copy; 2025 Trevor Seestedt</p>
+  </footer>
+  {% endblock footer %}
+  <!--  Dark mode toggling -->
+  <script>
+    function toggleDarkMode() {
+
+      // Toggling dark mode on the body
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+      // Sync bulb icon
+      const bulb = document.getElementById('light-bulb').querySelector('svg');
+      bulb.classList.toggle('bulb-on', isDark);
+      bulb.classList.toggle('bulb-off', !isDark);
+    }
+  </script>
+  <!-- Typing of name script -->
+  <script src="{% static 'personal_website/js/typing.js' %}"></script>
+  <!-- Loading overlay script -->
+  <script src="{% static 'personal_website/js/loading.js' %}"></script>
+</body>
+
+<!-- loading overlay -->
+<div id="loading-overlay" style="display: none;">
+  <div class="loading-background"></div>
+  <div class="loading-text">Loading...</div>
+</div>
+
+</html>

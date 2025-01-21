@@ -1,0 +1,345 @@
+/* ============ BASE.HTML - GLOBAL STYLES ============ */
+
+.container { 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+}
+
+.site-header, .nav-links li a, .light-bulb {
+  transition: none !important;
+}
+
+body {
+  transition: none !important;
+  min-height: 100vh; 
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #FAF9F6;
+}
+
+/* ============ BASE.HTML - HEADER ============ */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #FAF9F6;
+}
+
+.site-title {
+  font-size: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #242424; 
+  animation: blink-caret 0.8s steps(1) infinite; 
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ============ BASE.HTML - NAVIGATION ============ */
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem; 
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  display: inline-flex; 
+  text-decoration: none;
+  color: #000000;
+  font-size: 24px;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links li a:hover {
+  color: #666;
+}
+
+.nav-links li a:active {
+  transform: scale(0.95);
+}
+
+/* ============ BASE.HTML - LIGHT BULB ============ */
+
+.light-bulb {
+  margin-right: 2rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  color: #000000;
+}
+
+.light-bulb:hover {
+  color: #666;
+}
+
+.bulb-off {
+  fill: none; 
+  stroke: currentColor;
+}
+
+.bulb-on {
+  fill: currentColor; 
+  stroke: currentColor;
+}
+
+.light-bulb:active {
+  transform: scale(.9);
+}
+
+/* ============ BASE.HTML - DARK MODE ============ */
+
+body.dark-mode {
+  background-color: #252525;
+  color: #ffffff;
+}
+
+body.dark-mode .site-header {
+  background-color: #252525;
+}
+
+body.dark-mode .site-title {
+  color: #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+body.dark-mode .nav-links li a {
+  color: #ffffff;
+}
+
+body.dark-mode .nav-links li a:hover {
+  color: #666;
+}
+
+body.dark-mode .light-bulb {
+  color: #ffffff;
+}
+
+body.dark-mode .light-bulb:hover {
+  color: #666;
+}
+
+/* ============ BASE.HTML - LOADING CLASSES ============ */
+
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  filter: blur(5px);
+  backdrop-filter: blur(5px); 
+}
+
+.loading-text{ 
+  font-size: 32px; 
+  font-weight: bold;
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+/* ============ HOME.HTML - ALL CONTAINERS ============ */
+
+.about-me-container,
+.resume-container,
+.contact-container {
+  padding: 20px;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.about-me-container h2,
+.resume-container h2,
+.contact-container h2 {
+  font-size: 32px;
+  border-bottom: 1px solid #ccc ;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+
+/* ============ HOME.HTML - BUTTON STYLING ============ */
+
+.btn {
+  background-color: #FAF9F6;
+  margin-top: 50px; 
+  border: 2px solid #000000;
+  border-radius: 30px;
+  box-shadow: #000000 4px 4px 0 0;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+
+.btn:active {
+  box-shadow: #000000 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+/* ============ HOME.HTML - DARK-MODE BUTTON ============ */
+
+.dark-mode .btn {
+  background-color: #252525;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: #ffffff 4px 4px 0 0
+}
+
+.dark-mode .btn:active {
+  box-shadow: #ffffff 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+
+/* ============ PROJECTS.HTML - PROJECTS CONTAINER ============ */
+
+.projects-header {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.projects-underline {
+  width: 70%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px auto 30px; 
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+  margin: 0 auto 40px; 
+}
+
+.project-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.project-text h3 {
+  margin-top: 0;
+}
+
+.project-text p { 
+  width: 100%;
+}
+
+.project-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-left: 20px;
+}
+
+.project-images img {
+  margin-left: auto;
+  display: flex;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+.project-notfound { 
+  margin: 0 auto;
+}
+
+/* ============ BASE.HTML - FOOTER + SOCIAL MEDIA STYLING ============ */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto; 
+  padding: 10px; 
+  width: 100%; 
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.social-icons { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.github-icon img {
+  max-width: 60px; 
+  height: auto; 
+  opacity: .7;
+  margin: 0 5px;
+}
+
+.github-icon img:hover {
+  opacity: 1;
+}
+
+.linkedin-icon img {
+  max-width: 48px; 
+  height: auto; 
+  opacity: .7;
+  margin: 0 5px;
+}
+
+.linkedin-icon img:hover {
+  opacity: 1;
+}
+
+.dark-mode .github-icon img {
+  filter: invert(100%);
+}
+
+.dark-mode .linkedin-icon img {
+  filter: invert(100%);
+}
+
+
+
