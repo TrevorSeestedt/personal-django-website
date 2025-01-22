@@ -343,5 +343,6 @@ footer {
   filter: invert(100%);
 }
 
-
-
+.github-icon {
+  margin-right: 10px;
+}
