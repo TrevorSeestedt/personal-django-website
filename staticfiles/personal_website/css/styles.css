@@ -316,6 +316,7 @@ footer {
   height: auto; 
   opacity: .7;
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .github-icon img:hover {
@@ -327,6 +328,7 @@ footer {
   height: auto; 
   opacity: .7;
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .linkedin-icon img:hover {
@@ -341,5 +343,6 @@ footer {
   filter: invert(100%);
 }
 
-
-
+.github-icon {
+  margin-right: 10px;
+}
