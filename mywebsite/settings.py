@@ -30,6 +30,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret-key')
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = [
+    'trevorseestedt.me',
+    'www.trevorseestedt.me',
     'trevor-django-website.onrender.com',
     'localhost',
     '127.0.0.1',
