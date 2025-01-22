@@ -23,13 +23,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n8a)3u_0&-30*7%jgt1i5@2d!$sm#7gsmw0bnj+gq8)!j+s111'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = ['trevor-django-website.onrender.com']
-
+ALLOWED_HOSTS = [
+    'trevor-django-website.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 # Application definition
 
