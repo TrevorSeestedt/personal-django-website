@@ -33,7 +33,7 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 ALLOWED_HOSTS = [
     'trevorseestedt.me',
     'www.trevorseestedt.me',
-    'courteous-stillness.up.railway.app',
+    'pacific-empathy.up.railway.app',
     'localhost',
     '127.0.0.1',
 ]
