@@ -32,7 +32,7 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 ALLOWED_HOSTS = [
     'trevorseestedt.me',
     'www.trevorseestedt.me',
-    'trevor-django-website.onrender.com',
+    '*.up.railway.app',
     'localhost',
     '127.0.0.1',
 ]
