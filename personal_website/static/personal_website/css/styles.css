@@ -212,6 +212,10 @@ body.dark-mode .light-bulb:hover {
   touch-action: manipulation;
 }
 
+.btn:hover { 
+  border: 2px solid #666;
+  color: #666;
+}
 
 .btn:active {
   transform: scale(95%);
@@ -223,6 +227,11 @@ body.dark-mode .light-bulb:hover {
   background-color: #252525;
   color: #ffffff;
   border-color: #ffffff;
+}
+
+.dark-mode .btn:hover {
+  border-color: #666;
+  color: #666;
 }
 
 .dark-mode .btn:active {
