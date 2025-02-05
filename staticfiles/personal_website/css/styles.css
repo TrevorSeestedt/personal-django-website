@@ -198,11 +198,10 @@ body.dark-mode .light-bulb:hover {
   margin-top: 50px; 
   border: 2px solid #000000;
   border-radius: 30px;
-  box-shadow: #000000 4px 4px 0 0;
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 18px;
   padding: 0 18px;
   line-height: 50px;
@@ -211,13 +210,11 @@ body.dark-mode .light-bulb:hover {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  font-family: 'JetBrains Mono', monospace;
 }
 
 
 .btn:active {
-  box-shadow: #000000 2px 2px 0 0;
-  transform: translate(2px, 2px);
+  transform: scale(95%);
 }
 
 /* ============ HOME.HTML - DARK-MODE BUTTON ============ */
@@ -226,12 +223,10 @@ body.dark-mode .light-bulb:hover {
   background-color: #252525;
   color: #ffffff;
   border-color: #ffffff;
-  box-shadow: #ffffff 4px 4px 0 0
 }
 
 .dark-mode .btn:active {
-  box-shadow: #ffffff 2px 2px 0 0;
-  transform: translate(2px, 2px);
+  transform: scale(95%);
 }
 
 
