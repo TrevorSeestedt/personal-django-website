@@ -7,7 +7,7 @@ class Projects(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     languages = models.CharField(max_length=255, blank=True, default='')
-    github_link = models.URLField(blank=True, null=True, default = 'Access to this GitHub repository is currently unavailable.')
+    github_link = models.URLField(blank=True, null=True)
     
     # Image Fields for the projects 
     image_1 = models.ImageField(upload_to='project_images/', blank=True, null=True)
