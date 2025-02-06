@@ -6,8 +6,9 @@ from django.db import models
 class Projects(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    github_link = models.URLField(blank=True, null=True)
-
+    languages = models.CharField(max_length=255, blank=True, default='')
+    github_link = models.URLField(blank=True, null=True, default = 'Access to this GitHub repository is currently unavailable.')
+    
     # Image Fields for the projects 
     image_1 = models.ImageField(upload_to='project_images/', blank=True, null=True)
     image_2 = models.ImageField(upload_to='project_images/', blank=True, null=True)
