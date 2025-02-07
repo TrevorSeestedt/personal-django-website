@@ -38,6 +38,10 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
+CSRF_TRUSTED_ORIGINS =  [
+    'https://personal-django-website-production.up.railway.app',
+    'https://www.trevorseestedt.me',
+]
 # Application definition
 
 INSTALLED_APPS = [
