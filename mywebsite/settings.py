@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'mywebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-print("DATABASE_URL:", os.environ.get('DATABASE_URL'))
+print("DATABASE_PUBLIC_URL:", os.environ.get('DATABASE_PUBLIC_URL'))
 
 DATABASES = {
     'default': {
@@ -98,9 +98,9 @@ DATABASES = {
     }
 }
 
-# Override with PostgreSQL if DATABASE_URL is set
-if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.config(default=os.environ['DATABASE_URL'], conn_max_age=600)
+# Override with PostgreSQL if DATABASE_PUBLIC_URL is set
+if 'DATABASE_PUBLIC_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(default=os.environ['DATABASE_PUBLIC_URL'], conn_max_age=600)
     print("Using PostgreSQL database configuration")
 
 # Password validation
